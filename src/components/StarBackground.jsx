@@ -10,7 +10,7 @@ function StarBackground() {
 
     useEffect(() => {
         generateStars();
-        generateMeteors();
+        // generateMeteors();
 
         const handleResize = () => {
             generateStars();
@@ -55,7 +55,6 @@ function StarBackground() {
                 x: Math.random() * 100,
                 y: Math.random() * 50,
                 delay: Math.random() * 15,
-
                 animationDuration: Math.random() * 3 + 3,
             })
         } setMeteors(newMeteors)
