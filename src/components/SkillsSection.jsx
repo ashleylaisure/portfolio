@@ -1,28 +1,35 @@
 import { Figma } from 'lucide-react';
 import React, { useState } from 'react'
 import reacti from '../assets/react.svg'
+import css from '../assets/css.svg'
+import github from '../assets/github.svg'
+import html from '../assets/html.svg'
+import javascript from '../assets/javascript.svg'
+import node from '../assets/node.svg'
+import python from '../assets/python.svg'
 import {cn} from '@/lib/utils.js'
+
 
 const skills = [
   // Frontend
-    { name: "HTML/CSS", level: 95, category: "frontend", icon: '' },
-    // { name: "CSS", level: 95, category: "frontend", icon:'' },
-    { name: "JavaScript", level: 90, category: "frontend", icon:'' },
+    { name: "HTML", level: 95, category: "frontend", icon: html },
+    { name: "CSS", level: 95, category: "frontend", icon:css },
+    { name: "JavaScript", level: 90, category: "frontend", icon: javascript },
     { name: "React", level: 90, category: "frontend", icon: reacti},
     { name: "TypeScript", level: 30, category: "frontend", icon:'' },
     { name: "Tailwind CSS", level: 90, category: "frontend", icon:'' },
     { name: "Next.js", level: 80, category: "frontend", icon: ''},
-    { name: "Python", level: 80, category: "frontend", icon:'' },
+    { name: "Python", level: 80, category: "frontend", icon: python },
 
   // Backend
-    { name: "Node.js", level: 80, category: "backend", icon: '' },
+    { name: "Node.js", level: 80, category: "backend", icon: node },
     { name: "Express", level: 75, category: "backend", icon: '' },
     { name: "MongoDB", level: 70, category: "backend", icon: ''},
     { name: "PostgreSQL", level: 65, category: "backend", icon: '' },
     { name: "Django", level: 60, category: "backend", icon: '' },
 
   // Tools
-    { name: "Git/GitHub", level: 90, category: "tools", icon: '' },
+    { name: "Git/GitHub", level: 90, category: "tools", icon: github },
     { name: "AWS", level: 70, category: "tools", icon: ''},
     { name: "Figma", level: 85, category: "tools", icon: '' }, 
     { name: "VS Code", level: 95, category: "tools", icon: ''},
@@ -37,6 +44,7 @@ function SkillsSection() {
         category === 'all' || skill.category === category
     );
 
+
     return (
         <section id="skills" className='py-24 px-4 relative bg-secondary/30'>
             <div className='container mx-auto max-w-5xl'>
@@ -49,8 +57,8 @@ function SkillsSection() {
                         <button 
                         key={key}
                         onClick={() => setCategory(cat)} 
-                        className={cn('px-5 py-2 rounded-full transition-colors duration-300 capitalize cursor-pointer hover:text-primary',
-                                category === cat ? 'bg-primary text-primary-foreground' : 'bg-secondary/70 text-foreground hover:bg-secondary'
+                        className={cn('px-5 py-2 rounded-full transition-colors duration-300 capitalize cursor-pointer ',
+                                category === cat ? 'bg-primary text-primary-foreground' : 'bg-secondary/70 text-foreground hover:text-primary'
                             )}>
                             {cat}
                         </button>
@@ -65,7 +73,7 @@ function SkillsSection() {
                                     <h3 className='font-semibold text-lg'>{skill.name}</h3>
                                 </div>
 
-                                <div className=' w-6 h-6 rounded-full object-cover'>
+                                <div className='w-6 h-6 rounded-full object-cover'>
                                     {skill.icon ? <img src={skill.icon} alt={skill.name} /> : null}
                                 </div>
                             </div>
