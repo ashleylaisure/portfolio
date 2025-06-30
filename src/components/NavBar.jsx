@@ -13,11 +13,25 @@ const navItems = [
 function NavBar() {
     
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect (() => {
+        const navScroll = () => {
+            setIsScrolled(window.scrollY >= 8)
+        }
+
+        window.addEventListener('scroll', navScroll)
+        return () => window.removeEventListener('scroll', navScroll)
+
+    })
+
 
     return (
         <nav 
             className={cn(
-                "fixed w-full z-40 transition-all duration-300 bg-card py-5",)}>
+                "fixed w-full z-40 transition-all duration-300 py-5",
+                isScrolled ? "bg-card shadow-xs" : "bg-background/90 shadow-xs"
+                )}>
             <div className="container flex items-center justify-between">
                 <div className='flex justify-center items-center'>
                     <a 
@@ -52,7 +66,7 @@ function NavBar() {
                 </button>
                 <div 
                     className={cn(
-                        "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
+                        "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
                         "transition-all duration-300 md:hidden",
                         isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 )}>

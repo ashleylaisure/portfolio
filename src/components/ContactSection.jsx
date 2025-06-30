@@ -1,9 +1,41 @@
 import { Instagram, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import {cn} from '@/lib/utils.js'
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast'
 
 
 function ContactSection() {
+    const initialState = {
+            name: '',
+            email: '',
+            message: '',
+        }
+
+    const form = useRef()
+    const [formData, setFormData] = useState(initialState)
+
+    const handleChange = (evt) => {
+        setFormData({...formData, [evt.target.name] : evt.target.value})
+    }
+
+    const sendEmail = (evt) => {
+        evt.preventDefault()
+
+        emailjs.sendForm('service_hvz77oi', 'template_b0ue31w', form.current, { publicKey: 'UNp1lmJHWSTBS-qV2'})
+            .then(() => {
+                console.log("SUCCESS!");
+                toast.success('Message Sent Successfully!')
+                setFormData(initialState);
+            },
+            (error) => {
+                console.log('FAILED...', error.txt)
+                toast.error('Faild to Send message. Please try again')
+            }
+        )
+
+    }
 
     return (
         <section id='contact' className='py-24 px-4 relative bg-secondary/30'>
@@ -77,13 +109,15 @@ function ContactSection() {
                     <div className='bg-card p-8 rounded-lg shadow-xs'>
                         <h3 className='text-2xl font-semibold mb-6'>Send a Message</h3>
 
-                        <form class="space-y-6" action="">
+                        <form class="space-y-6" ref={form} onSubmit={sendEmail}>
                             <div>
                                 <label htmlFor="name" className='block text-sm font-medium mb-2'>Your Name</label>
                                 <input 
                                     type="text" 
                                     id="name" 
-                                    name="name" 
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     required
                                     placeholder='Ashley Laisure...'
                                     className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' 
@@ -96,6 +130,8 @@ function ContactSection() {
                                     type="email" 
                                     id="email" 
                                     name="email" 
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     required
                                     placeholder='ashley.laisure@gmail.com'
                                     className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary' 
@@ -107,6 +143,8 @@ function ContactSection() {
                                 <textarea  
                                     id="message" 
                                     name="message" 
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     required
                                     placeholder="Hello, I'd like to talk about..."
                                     className='w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none' 
@@ -117,12 +155,13 @@ function ContactSection() {
                                 type="submit" 
                                 className={cn(
                                     "cosmic-button w-full flex items-center justify-center gap-2",
-
-
-                            )} >
+                                )} >
                                 Send Message
                                 <Send size={16}/>
                             </button>
+
+
+
                         </form>
                     </div>
 

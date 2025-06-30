@@ -7,11 +7,12 @@ import ProjectsSection from "../components/ProjectsSection"
 import SkillsSection from "../components/SkillsSection"
 import StarBackground from "../components/StarBackground"
 import ThemeToggle from "../components/ThemeToggle"
+import {Toaster} from 'react-hot-toast'
 
 const Home = () => {
     return (
         <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
-
+            <Toaster position="bottom-right"/>
             {/* background effects */}
             <StarBackground />
             {/* Navbar */}
