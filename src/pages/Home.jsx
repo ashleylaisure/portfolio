@@ -14,7 +14,8 @@ const Home = () => {
         <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
             <Toaster position="bottom-right"/>
             {/* background effects */}
-            <StarBackground />
+            {/* <StarBackground /> */}
+            
             {/* Navbar */}
             <NavBar />
             {/* Main Content */}

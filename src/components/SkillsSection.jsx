@@ -35,13 +35,13 @@ const skills = [
     { name: "VS Code", level: 95, category: "tools", icon: ''},
 ];
 
-const categories = ['all', 'frontend', 'backend', 'tools']
+const categories = ['frontend', 'backend', 'tools']
 
 function SkillsSection() {
-    const [category, setCategory] = useState('all');
+    const [category, setCategory] = useState('frontend');
 
     const filteredSkills = skills.filter((skill) => 
-        category === 'all' || skill.category === category
+        skill.category === category
     );
 
 
@@ -57,7 +57,7 @@ function SkillsSection() {
                         <button 
                         key={key}
                         onClick={() => setCategory(cat)} 
-                        className={cn('px-5 py-2 rounded-full transition-colors duration-300 capitalize cursor-pointer ',
+                        className={cn('px-5 py-2 rounded-full transition-colors duration-300 capitalize cursor-pointer font-semibold ',
                                 category === cat ? 'bg-primary text-primary-foreground' : 'bg-secondary/70 text-foreground hover:text-primary'
                             )}>
                             {cat}
@@ -67,7 +67,7 @@ function SkillsSection() {
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {filteredSkills.map((skill, key) => (
-                        <div key={key} className='bg-card p-6 rounded-lg shadow-xs card-hover'>
+                        <div key={key} className='bg-card/70 p-6 rounded-lg shadow-xs card-hover'>
                             <div className='flex justify-center items-center gap-2 mb-4'>
                                 <div className=''>
                                     <h3 className='font-semibold text-lg'>{skill.name}</h3>

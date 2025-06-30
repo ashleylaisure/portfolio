@@ -66,27 +66,27 @@
 
 @layer base {
   :root {
-    --background: rgba(243, 245, 255, 1);
+    --background-image: url('src/assets/light-joey-f-rjohWsfOn0Y-unsplash.jpg');
     --foreground: rgba(18, 22, 44, 1);
 
-    --card: rgba(255, 255, 255, 1);
+    --card: rgba(246, 240, 249, 1);
 
-    --primary: rgba(132, 125, 230, 1);
-    --primary-foreground: rgba(243, 245, 255, 1);
+    --primary: rgba(144, 106, 240, 1);
+    --primary-foreground: rgba(238, 242, 252, 1);
 
-    --border: rgba(227, 229, 240 ,1);
+    --border: rgba(246, 240, 249, 1);
   }
 
   .dark {
-    --background: rgba(6, 7, 11, 1);
+    --background-image: url('src/assets/dark-pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg');
     --foreground: rgba(231, 233, 243, 1);
 
-    --card: rgba(12, 14, 21, 1);
+    --card: rgba(41, 28, 68, 1);
 
-    --primary: rgba(138, 122, 248, 1);
+    --primary: rgba(156, 62, 182, 1);
     --primary-foreground: rgba(231, 233, 243, 1);
 
-    --border: rgba(34, 39, 51, 1);
+    --border: rgba(34, 7, 31, 1);
   }
 
   * {
@@ -100,6 +100,10 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
