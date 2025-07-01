@@ -1,10 +1,13 @@
 import { ArrowDown } from 'lucide-react'
-import React from 'react'
+import React, { Suspense } from 'react'
+// import { motion } from 'framer-motion'
+import Hero3d from './Hero3d'
+import { Canvas } from '@react-three/fiber'
 
 function HeroSection() {
     return (
-        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4 ">
-            <div className='container max-w-4xl mx-auto text-center z-10'>
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-start px-4">
+            <div className='container max-w-4xl mx-auto text-center z-10 mt-50'>
                 <div className='space-y-6'>
 
                     <h1 className='text-4xl md:text-6xl font-bold tracking-tight'>
@@ -24,7 +27,25 @@ function HeroSection() {
                 </div>
             </div>
 
-            <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce'>
+            {/* hero image */}
+            <div className='absolute bottom-0 right-0 md:right-30 w-[400px] h-[400px]'>
+                
+                <Suspense fallback="loading...">
+                    <div className="absolute -bottom-30 -right-20 z-0">
+                        <Hero3d />
+                    </div>
+                    
+                </Suspense>
+
+                <div className="absolute -bottom-10 right-0 z-10">
+                    <img 
+                        className="w-full h-auto"
+                        src="src/assets/Laisure_Ashley_8958_ret_FP-fix-Picsart-BackgroundRemover.jpg" alt="Ashley Laisure headshot"/>
+                </div>
+
+            </div>
+
+            <div className='absolute -bottom-20 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce'>
                 <span className='text-sm text-primary-foreground mb-2'>Scroll</span>
                 <ArrowDown className="h-5 w-5 text-primary" />
             </div>
