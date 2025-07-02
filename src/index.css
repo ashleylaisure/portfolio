@@ -165,6 +165,16 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--primary);
+  text-shadow: none;
+}
+
+@utility text-muted-forground {
+  @apply text-foreground/50
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;

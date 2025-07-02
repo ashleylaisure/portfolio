@@ -96,10 +96,12 @@ function ContactSection() {
                         <div className=''>
                             {/* <h4 className='font-medium mb-4'>Connect With Me</h4> */}
                             <div className='flex space-x-4 justify-center'>
-                                <a href="https://www.linkedin.com/in/ashley-laisure-6a9475354/" target='_blank'>
+                                <a href="https://www.linkedin.com/in/ashley-laisure-6a9475354/" target='_blank'
+                                    className='text-foreground/80 hover:text-primary transition-colors duration-300'>
                                     <Linkedin />
                                 </a>
-                                <a href="https://www.instagram.com/ashleylaisurestudio" target='_blank'>
+                                <a href="https://www.instagram.com/ashleylaisurestudio" target='_blank'
+                                className='text-foreground/80 hover:text-primary transition-colors duration-300'>
                                     <Instagram />
                                 </a>
                             </div>
@@ -109,7 +111,7 @@ function ContactSection() {
                     <div className='bg-card/70 p-8 rounded-lg shadow-xs'>
                         <h3 className='text-2xl font-semibold mb-6'>Send a Message</h3>
 
-                        <form class="space-y-6" ref={form} onSubmit={sendEmail}>
+                        <form className="space-y-6" ref={form} onSubmit={sendEmail}>
                             <div>
                                 <label htmlFor="name" className='block text-sm font-medium mb-2'>Your Name</label>
                                 <input 
