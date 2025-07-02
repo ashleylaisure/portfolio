@@ -48,11 +48,11 @@ function SkillsSection() {
     return (
         <section id="skills" className='py-24 px-4 relative min-h-screen'>
             <div className='container mx-auto max-w-5xl'>
-                <h2 className='text-3xl md:text-4xl font-bold mb-12 text-center'>
+                <h2 className='text-3xl md:text-4xl font-bold mb-10 text-center'>
                     My<span className='text-primary ml-2'>Skills</span>
                 </h2>
 
-                <div className='flex flex-wrap justify-center gap-4 mb-12 '>
+                <div className='flex flex-wrap justify-center gap-4 mb-5 '>
                     {categories.map((cat, key) => (
                         <button 
                         key={key}

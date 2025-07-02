@@ -150,6 +150,12 @@
     /* hover:scale-105 active:scale-95; */
 }
 
+@utility slider-button {
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
+    transition-all duration-300 hover:bg-primary/80
+
+}
+
 @utility cosmic-button-2 {
   @apply px-6 py-2 rounded-full border border-primary text-primary
     transition-all duration-300 hover:bg-primary/30

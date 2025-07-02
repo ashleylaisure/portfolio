@@ -29,7 +29,7 @@ function NavBar() {
     return (
         <nav 
             className={cn(
-                "fixed w-full z-40 transition-all duration-300 py-5",
+                "fixed w-full z-40 transition-all duration-300 py-4",
                 isScrolled ? "bg-card shadow-xs" : "bg-background/90 shadow-xs"
                 )}>
             <div className="container flex items-center justify-between">
