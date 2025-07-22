@@ -82,81 +82,85 @@ function ProjectsSection() {
                     Here are some of my recent projects. Each project was carefully crafted with attention to detail, performance, and user experience.
                 </p>
 
-                
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+                <div className='bg-card/70 p-6 rounded-lg shadow-xs'>
+                    <div className='grid grid-cols-1 md:grid-cols-12 gap-3 '>
 
-                        <div className="flex items-center justify-center w-full">
+                        <div className="col-span-5 flex items-center justify-center w-full h-full p-5">
 
-                            <div className='group bg-card rounded-lg overflow-hidden shadow-xs min-w-[400px] max-w-[500px]  '>
-
-                                <div className='p-4 min-h-[150px] flex flex-col justify-between'>
+                            <div className='flex flex-col w-full h-full justify-between'>
+                                
+                                <div className='p-5 flex flex-col gap-6'>
                                     <h3 className='text-xl font-semibold'>{project.title}</h3>
                                     <p className='text-muted-forground text-sm'>{project.description}</p>
-                                    <div className='flex justify-between items-center'>
-                                        <div className='flex gap-2'>
-                                            <a className="text-foreground hover:text-primary transition-colors duration-300" 
-                                                href={project.demoUrl}
-                                                target='_blank'><ExternalLink size={20}/>
-                                            </a>
-                                            <a className="text-foreground hover:text-primary transition-colors duration-300" 
-                                                href={project.githubUrl} 
-                                                target='_blank'><Github size={20}/>
-                                            </a>
-                                        </div>
-                                        <div className='flex flex-wrap gap-1'>
-                                            {project.tags.map((tag) => (
-                                                <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/40">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
+                                </div>
+                                
+
+                                <div className='flex justify-between items-center'>
+                                    <div className='flex gap-2'>
+                                        <a className="text-foreground hover:text-primary transition-colors duration-300" 
+                                            href={project.demoUrl}
+                                            target='_blank'><ExternalLink size={20}/>
+                                        </a>
+                                        <a className="text-foreground hover:text-primary transition-colors duration-300" 
+                                            href={project.githubUrl} 
+                                            target='_blank'><Github size={20}/>
+                                        </a>
+                                    </div>
+                                    <div className='flex flex-wrap gap-1'>
+                                        {project.tags.map((tag) => (
+                                            <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/40">
+                                                {tag}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                             
-                        <div className="w-full h-full flex justify-center overflow-hidden">
+                        <div className="col-span-7 w-full h-full flex justify-center overflow-hidden">
                             <img className='h-[350px] object-cover object-top rounded-lg'
                                 src={project.image} alt={project.title} />
                         </div>
-                </div> 
+                    </div> 
 
-                <div className='mx-auto flex flex-col justify-center'> 
-                    <div className="w-full flex justify-between my-4">
-                        <button 
-                            className='cosmic-button  flex items-center gap-2 cursor-pointer'
-                            onClick={showPreviousProject}>
-                                <ArrowLeft size={16}/>
-                        </button>
+                    <div className='mx-auto flex flex-col justify-center'> 
+                        <div className="w-full flex justify-between mt-10">
+                            <button 
+                                className='cosmic-button  flex items-center gap-2 cursor-pointer'
+                                onClick={showPreviousProject}>
+                                    <ArrowLeft size={16}/>
+                            </button>
 
-                        <div className='flex items-center gap-1'>
-                            {projects.map((_, index) => (
-                                <button key={index}
-                                    className="text-primary hover:text-primary/50 transition-colors duration-300 cursor-pointer"
-                                    onClick={() => setProject(projects[index])}
-                                    >
-                                    {index === project.id ? 
-                                        <CircleDot size={25}/> : <Circle size={25}/> }
-                                </button>
-                            ))}
+                            <div className='flex items-center gap-1'>
+                                {projects.map((_, index) => (
+                                    <button key={index}
+                                        className="text-primary hover:text-primary/50 transition-colors duration-300 cursor-pointer"
+                                        onClick={() => setProject(projects[index])}
+                                        >
+                                        {index === project.id ? 
+                                            <CircleDot size={25}/> : <Circle size={25}/> }
+                                    </button>
+                                ))}
+                            </div>
+
+                            <button 
+                                className='cosmic-button  flex items-center gap-2 cursor-pointer'
+                                onClick={showNextProject}
+                                >
+                                    <ArrowRight size={16}/>
+                            </button>
                         </div>
 
-                        <button 
-                            className='cosmic-button  flex items-center gap-2 cursor-pointer'
-                            onClick={showNextProject}
-                            >
-                                <ArrowRight size={16}/>
-                        </button>
+                        {/* <div className="text-center">
+                            <a href="https://github.com/ashleylaisure"
+                                className='cosmic-button w-fit flex items-center mx-auto gap-2'
+                                target='_blank'>
+                                Check Out My Github <ArrowRight size={16}/>
+                            </a>
+                        </div> */}
+                    
                     </div>
-
-                    <div className="text-center">
-                        <a href="https://github.com/ashleylaisure"
-                            className='cosmic-button w-fit flex items-center mx-auto gap-2'
-                            target='_blank'>
-                            Check Out My Github <ArrowRight size={16}/>
-                        </a>
-                    </div>
-                
                 </div>
 
             

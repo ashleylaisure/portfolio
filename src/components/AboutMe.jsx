@@ -15,13 +15,17 @@ function AboutMe() {
                         <h3 className='text-2xl font-semibold'>Passionate Web Developer & Tech Creator</h3>
                         
                         <p className='text-muted-foreground'>
-                            Recent Graduate of General Assymblys Software Engineering Program. 
+                            Recent Graduate of General Assembly's Software Engineering Program. 
                         </p>
                         
                         <p className='text-muted-foreground'>
-                            I'm passionate about creating elegant soslutions to complex
-                            problems, and I'm constantly learning new technologies and techniques to
-                            stay at the forefront of the ever-evolving web landscape.
+                            Full-stack software engineer with 10+ years of customer service experience and a background in visual arts. 
+                            I bring a unique blend of user empathy, strong communication, and design sensibility to building user-centered applications. 
+                        </p>
+                        <p className='text-muted-foreground'>
+                            Proficient in the MERN stack and experienced with RESTful APIs, scalable backends, and responsive front-end design. 
+                            I create intuitive, efficient tools that streamline workflows and support product 
+                            growth—driven by a passion for building well-designed software that simplifies everyday life.
                         </p>
 
                         <div className='flex flex-col sm:flex-row gap-4 pt-4 justify-center'>

@@ -71,7 +71,7 @@
 
     --card: rgba(246, 240, 249, 1);
 
-    --primary: rgba(144, 106, 240, 1);
+    --primary: rgb(144, 106, 240);
     --primary-foreground: rgba(238, 242, 252, 1);
 
     --border: rgba(246, 240, 249, 1);
@@ -83,7 +83,7 @@
 
     --card: rgba(41, 28, 68, 1);
 
-    --primary: rgba(156, 62, 182, 1);
+    --primary: #9c3eb6;
     --primary-foreground: rgba(231, 233, 243, 1);
 
     --border: rgba(34, 7, 31, 1);
@@ -178,7 +178,7 @@
 }
 
 @utility text-muted-forground {
-  @apply text-foreground/50
+  @apply text-foreground/70
 }
 
 #root {

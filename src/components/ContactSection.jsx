@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { GithubIcon, Instagram, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
 import React, { useState } from 'react'
 import {cn} from '@/lib/utils.js'
 import { useRef } from 'react';
@@ -50,7 +50,7 @@ function ContactSection() {
                 </p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-                    <div className='space-y-8'>
+                    <div className='space-y-8 p-8'>
                         <h3 className='text-2xl font-semibold mb-6'>Contact Information</h3>
 
                         <div className='space-y-6 justify-center'>
@@ -95,14 +95,14 @@ function ContactSection() {
 
                         <div className=''>
                             {/* <h4 className='font-medium mb-4'>Connect With Me</h4> */}
-                            <div className='flex space-x-4 justify-center'>
+                            <div className='flex gap-4 justify-center'>
                                 <a href="https://www.linkedin.com/in/ashley-laisure-6a9475354/" target='_blank'
                                     className='text-foreground/80 hover:text-primary transition-colors duration-300'>
                                     <Linkedin />
                                 </a>
-                                <a href="https://www.instagram.com/ashleylaisurestudio" target='_blank'
+                                <a href="https://github.com/ashleylaisure" target='_blank'
                                 className='text-foreground/80 hover:text-primary transition-colors duration-300'>
-                                    <Instagram />
+                                    <GithubIcon />
                                 </a>
                             </div>
                         </div>
