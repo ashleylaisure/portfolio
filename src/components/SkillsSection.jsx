@@ -82,7 +82,7 @@ function SkillsSection() {
                         <div key={key} className='bg-card/70 p-6 rounded-lg shadow-xs card-hover'>
                             <div className='flex justify-center items-center gap-2 mb-4'>
                                 <div className='w-10 h-10 object-cover'>
-                                    {skill.icon ? <img src={skill.icon} alt={skill.name} /> : null}
+                                    {skill.icon && <img src={skill.icon} alt={skill.name} />}
                                 </div>
                             </div>
 

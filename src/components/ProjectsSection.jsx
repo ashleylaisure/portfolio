@@ -7,8 +7,8 @@ const projects = [
     {
         id: 0,
         title: "Mindsweeper",
-        description: "JavaScript game",
-        image: '/projects/project1.png',
+        description: "A classic logic game, reimagined as a browser-based JavaScript experience",
+        image: '/projects/portfolio_minesweeper.png',
         tags: ["HTML", "CSS", "JavaScript"],
         githubUrl: 'https://github.com/ashleylaisure/Minesweeper',
         demoUrl: 'https://ashleylaisure.github.io/Minesweeper/',
@@ -16,38 +16,56 @@ const projects = [
     {
         id: 1,
         title: "The BookNook",
-        description: "MEN Stack",
+        description: "Full-stack development project, allowing users to log and manage their book collection.",
         image: '/projects/project2.png',
-        tags: ["HTML", "CSS", "JavaScript"],
-        githubUrl: 'https://github.com/ashleylaisure/Minesweeper',
-        demoUrl: 'https://ashleylaisure.github.io/Minesweeper/',
+        tags: ["Node.js", "Express", "MongoDB"],
+        githubUrl: 'https://github.com/ashleylaisure/_thebooknook',
+        demoUrl: 'https://thebooknook-d5125933b6c8.herokuapp.com/',
     },
     {
         id: 2,
-        title: "Corner Market",
-        description: "MERN Stack",
-        image: '/projects/project2.png',
-        tags: ["HTML", "CSS", "JavaScript"],
-        githubUrl: 'https://github.com/ashleylaisure/Minesweeper',
-        demoUrl: 'https://ashleylaisure.github.io/Minesweeper/',
+        title: "The BookNook",
+        description: "Full-stack development project, allowing users to log and manage their book collection.",
+        image: '/projects/project2_pic2.png',
+        tags: ["Node.js", "Express", "MongoDB"],
+        githubUrl: 'https://github.com/ashleylaisure/_thebooknook',
+        demoUrl: 'https://thebooknook-d5125933b6c8.herokuapp.com/',
     },
     {
         id: 3,
-        title: "Weather App",
-        description: "React application",
-        image: '/projects/project3.png',
-        tags: ["HTML", "CSS", "JavaScript"],
-        githubUrl: 'https://github.com/ashleylaisure/Minesweeper',
-        demoUrl: 'https://ashleylaisure.github.io/Minesweeper/',
+        title: "Corner Market",
+        description: "A community-driven platform where users can sign up, create personalized profiles, and create listings. ",
+        image: '/projects/cornermarket.png',
+        tags: ["MongoDB", "Express", "React", "Node.js"],
+        githubUrl: 'https://github.com/ashleylaisure/corner-market-front-end',
+        demoUrl: '',
     },
     {
         id: 4,
-        title: "Bacpacking Blueprint",
-        description: "Django/python",
+        title: "Corner Market",
+        description: "A community-driven platform where users can sign up, create personalized profiles, and create listings. ",
+        image: '/projects/cornermarket_2.png',
+        tags: ["MongoDB", "Express", "React", "Node.js"],
+        githubUrl: 'https://github.com/ashleylaisure/corner-market-back-end',
+        demoUrl: '',
+    },
+    {
+        id: 5,
+        title: "Backpacking Blueprint",
+        description: "Comprehensive app designed to help thru-hikers plan their next adventure. With the ability to plan out a daily itinerary for each trip, including meal planning and gear to pack.",
         image: '/projects/project3.png',
-        tags: ["HTML", "CSS", "JavaScript"],
-        githubUrl: 'https://github.com/ashleylaisure/Minesweeper',
-        demoUrl: 'https://ashleylaisure.github.io/Minesweeper/',
+        tags: ["Python", "Django", "PostgreSQL"],
+        githubUrl: 'https://github.com/ashleylaisure/backpacking_blueprint',
+        demoUrl: 'https://backpacking-blueprint.onrender.com/',
+    },
+    {
+        id: 6,
+        title: "Backpacking Blueprint",
+        description: "Comprehensive app designed to help thru-hikers plan their next adventure. With the ability to plan out a daily itinerary for each trip, including meal planning and gear to pack.",
+        image: '/projects/project3_pic2.png',
+        tags: ["Python", "Django", "PostgreSQL"],
+        githubUrl: 'https://github.com/ashleylaisure/backpacking_blueprint',
+        demoUrl: 'https://backpacking-blueprint.onrender.com/',
     },
 ]
 
@@ -85,7 +103,7 @@ function ProjectsSection() {
                 <div className='bg-card/70 p-6 rounded-lg shadow-xs'>
                     <div className='grid grid-cols-1 md:grid-cols-12 gap-3 '>
 
-                        <div className="col-span-5 flex items-center justify-center w-full h-full p-5">
+                        <div className="col-span-4 flex items-center justify-center w-full h-full pt-5">
 
                             <div className='flex flex-col w-full h-full justify-between'>
                                 
@@ -95,12 +113,13 @@ function ProjectsSection() {
                                 </div>
                                 
 
-                                <div className='flex justify-between items-center'>
+                                <div className='flex flex-col items-center gap-2 pt-3 border-t border-muted-foreground/20'>
                                     <div className='flex gap-2'>
-                                        <a className="text-foreground hover:text-primary transition-colors duration-300" 
+                                        {project.demoUrl && (<a className="text-foreground hover:text-primary transition-colors duration-300" 
                                             href={project.demoUrl}
                                             target='_blank'><ExternalLink size={20}/>
-                                        </a>
+                                        </a>)}
+                                        
                                         <a className="text-foreground hover:text-primary transition-colors duration-300" 
                                             href={project.githubUrl} 
                                             target='_blank'><Github size={20}/>
@@ -118,14 +137,14 @@ function ProjectsSection() {
                             
                         </div>
                             
-                        <div className="col-span-7 w-full h-full flex justify-center overflow-hidden">
-                            <img className='h-[350px] object-cover object-top rounded-lg'
+                        <div className="col-span-8 w-full h-full flex justify-center overflow-hidden">
+                            <img className='h-[300px] object-cover object-center rounded-lg'
                                 src={project.image} alt={project.title} />
                         </div>
                     </div> 
 
                     <div className='mx-auto flex flex-col justify-center'> 
-                        <div className="w-full flex justify-between mt-10">
+                        <div className="w-full flex justify-between mt-5">
                             <button 
                                 className='cosmic-button  flex items-center gap-2 cursor-pointer'
                                 onClick={showPreviousProject}>
