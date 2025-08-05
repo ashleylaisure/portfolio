@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import reactLogo from '../assets/react.svg'
 import cssLogo from '../assets/css.svg'
-import githubLogo from '../assets/github.svg'
+import githubLogo from '../assets/github_2.png'
 import htmlLogo from '../assets/html.svg'
 import javascriptLogo from '../assets/javascript.svg'
 import nodeLogo from '../assets/node.svg'
@@ -11,7 +11,7 @@ import pythonLogo from '../assets/python.svg'
 
 import typescriptLogo from '../assets/typescript.png'
 import tailwindLogo from '../assets/tailwindcss.png'
-import nextjsLogo from '../assets/nextjs-icon.png'
+import nextjsLogo from '../assets/nextjs-icon_2.png'
 import expressjsLogo from '../assets/express-js.png'
 import mongodbLogo from '../assets/mongodb.svg'
 import postgresqlLogo from '../assets/Postgresql.png'
@@ -30,7 +30,7 @@ const skills = [
     { name: "React", level: 90, category: "frontend", icon: reactLogo},
     { name: "TypeScript", level: 30, category: "frontend", icon: typescriptLogo },
     { name: "Tailwind CSS", level: 90, category: "frontend", icon: tailwindLogo },
-    { name: "Next.js", level: 80, category: "frontend", icon: nextjsLogo},
+    { name: "Next.js", level: 80, category: "frontend", icon: nextjsLogo, iconsStyle: '' },
     { name: "Python", level: 80, category: "frontend", icon: pythonLogo },
 
   // Backend
@@ -41,7 +41,7 @@ const skills = [
     { name: "Django", level: 60, category: "backend", icon: djangoLogo },
 
   // Tools
-    { name: "Git/GitHub", level: 90, category: "tools", icon: githubLogo },
+    { name: "Git/GitHub", level: 90, category: "tools", icon: githubLogo, iconsStyle: 'rounded-full'  },
     { name: "AWS", level: 70, category: "tools", icon: awsLogo},
     { name: "Figma", level: 85, category: "tools", icon: figmaLogo }, 
     { name: "VS Code", level: 95, category: "tools", icon: vscLogo},
@@ -55,6 +55,7 @@ function SkillsSection() {
     const filteredSkills = skills.filter((skill) => 
         skill.category === category || category === 'all'
     );
+    
 
 
     return (
@@ -82,7 +83,7 @@ function SkillsSection() {
                         <div key={key} className='bg-card/70 p-6 rounded-lg shadow-xs card-hover'>
                             <div className='flex justify-center items-center gap-2 mb-4'>
                                 <div className='w-10 h-10 object-cover'>
-                                    {skill.icon && <img src={skill.icon} alt={skill.name} />}
+                                    {skill.icon && <img src={skill.icon} alt={skill.name} className={skill.iconsStyle}/>}
                                 </div>
                             </div>
 

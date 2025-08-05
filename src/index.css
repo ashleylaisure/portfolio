@@ -7,6 +7,7 @@
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
 
   --color-card: var(--card);
 
@@ -73,6 +74,7 @@
 
     --primary: rgb(144, 106, 240);
     --primary-foreground: rgba(238, 242, 252, 1);
+    --secondary: #A8A0ED;
 
     --border: rgba(246, 240, 249, 1);
   }
@@ -85,6 +87,7 @@
 
     --primary: #9c3eb6;
     --primary-foreground: rgba(231, 233, 243, 1);
+    --secondary: rgb(172, 41, 208);
 
     --border: rgba(34, 7, 31, 1);
   }
@@ -179,6 +182,10 @@
 
 @utility text-muted-forground {
   @apply text-foreground/70
+}
+
+@utility invert-colors {
+  @apply invert dark:invert-0;
 }
 
 #root {

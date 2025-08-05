@@ -1,7 +1,15 @@
 import { Canvas } from '@react-three/fiber'
 import { MeshDistortMaterial, Sphere } from '@react-three/drei'
+import { useEffect, useState } from 'react';
 
 const Hero3d = () => {
+    const [primaryColor, setPrimaryColor] = useState('#A8A0ED'); // fallback
+
+    useEffect(() => {
+        const root = getComputedStyle(document.documentElement);
+        const cssColor = root.getPropertyValue('--secondary').trim();
+        setPrimaryColor(cssColor);
+    }, []);
 
     return (
         <section className='w-[600px] h-[750px]'> 
@@ -9,7 +17,7 @@ const Hero3d = () => {
                 <mesh>
                     <Sphere args={[1, 50, 100]} scale={2}>
                         <MeshDistortMaterial 
-                            color="#A8A0ED"
+                            color={primaryColor}
                             attach="material" 
                             distort={0.5} 
                             speed={2} 

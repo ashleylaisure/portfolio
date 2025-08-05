@@ -31,7 +31,7 @@ function AboutMe() {
                         <div className='flex flex-col sm:flex-row gap-4 pt-4 justify-center'>
 
                             <a href="#contact" className='cosmic-button'>Get In Touch</a>
-                            <a href="" className='cosmic-button-2'>Download Resume</a>
+                            <a href="/public/Resume.pdf" className='cosmic-button-2' target="_blank">Download Resume</a>
                         </div>
                     </div>
 
