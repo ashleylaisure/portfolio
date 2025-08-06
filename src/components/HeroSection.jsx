@@ -45,7 +45,7 @@ function HeroSection() {
                 <div className="absolute -bottom-10 right-0 z-10">
                     <img 
                         className="w-full h-auto"
-                        src="src/assets/Laisure_Ashley_8958_ret_FP-fix-Picsart-BackgroundRemover.jpg" alt="Ashley Laisure headshot"/>
+                        src="/Laisure_Ashley_8958_ret_FP-fix-Picsart-BackgroundRemover.jpg" alt="Ashley Laisure headshot"/>
                 </div>
 
             </div>

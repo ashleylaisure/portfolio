@@ -66,7 +66,7 @@
 
 @layer base {
   :root {
-    --background-image: url('src/assets/light-joey-f-rjohWsfOn0Y-unsplash.jpg');
+    --background-image: url('/light-joey-f-rjohWsfOn0Y-unsplash.jpg');
     --foreground: rgba(18, 22, 44, 1);
 
     --card: rgba(246, 240, 249, 1);
@@ -78,7 +78,7 @@
   }
 
   .dark {
-    --background-image: url('src/assets/dark-pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg');
+    --background-image: url('/dark-pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg');
     --foreground: rgba(231, 233, 243, 1);
 
     --card: rgba(41, 28, 68, 1);
