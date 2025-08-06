@@ -1,15 +1,19 @@
 import { Canvas } from '@react-three/fiber'
 import { MeshDistortMaterial, Sphere } from '@react-three/drei'
 import { useEffect, useState } from 'react';
+import { useTheme } from "../ThemeContext"
 
 const Hero3d = () => {
     const [primaryColor, setPrimaryColor] = useState('#A8A0ED'); // fallback
+    const { theme } = useTheme();
 
     useEffect(() => {
-        const root = getComputedStyle(document.documentElement);
-        const cssColor = root.getPropertyValue('--secondary').trim();
-        setPrimaryColor(cssColor);
-    }, []);
+        if (theme === 'dark') {
+            setPrimaryColor('#ac29d0');
+        } else {
+            setPrimaryColor('#A8A0ED');
+        }
+    }, [theme]);
 
     return (
         <section className='w-[600px] h-[750px]'> 
