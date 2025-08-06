@@ -15,6 +15,7 @@ function ContactSection() {
 
     const form = useRef()
     const [formData, setFormData] = useState(initialState)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const handleChange = (evt) => {
         setFormData({...formData, [evt.target.name] : evt.target.value})
@@ -23,17 +24,20 @@ function ContactSection() {
     const sendEmail = (evt) => {
         evt.preventDefault()
 
+        setIsSubmitting(true);
         emailjs.sendForm('service_hvz77oi', 'template_b0ue31w', form.current, { publicKey: 'UNp1lmJHWSTBS-qV2'})
             .then(() => {
-                console.log("SUCCESS!");
+                // console.log("SUCCESS!");
                 toast.success('Message Sent Successfully!')
                 setFormData(initialState);
+                setIsSubmitting(false);
             },
             (error) => {
-                console.log('FAILED...', error.txt)
-                toast.error('Faild to Send message. Please try again')
+                console.log('FAILED...', error.text);
+                toast.error('Failed to Send message. Please try again');
+                setIsSubmitting(false);
             }
-        )
+        );
 
     }
 
@@ -158,7 +162,7 @@ function ContactSection() {
                                 className={cn(
                                     "cosmic-button w-full flex items-center justify-center gap-2",
                                 )} >
-                                Send Message
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
                                 <Send size={16}/>
                             </button>
 
